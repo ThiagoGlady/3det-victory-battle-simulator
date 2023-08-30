@@ -1,13 +1,7 @@
 import DesEVantagens from "./DesEVantagens";
+import PersonagemSimples from "./PersonagemSimples";
 
-export default interface Personagem {
-    nome: string;
-    poder: number;
-    habilidade: number;
-    resistencia: number;
-    PA: number;
-    PM: number;
-    PV: number;
+export default interface Personagem extends PersonagemSimples {
     pericias: string[];
     vantagens: DesEVantagens[];
     desvantagens: DesEVantagens[];
