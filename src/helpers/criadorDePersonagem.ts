@@ -2,8 +2,8 @@ import Personagem from "../interfaces/Personagem"
 import PersonagemSimples from "../interfaces/PersonagemSimples";
 const todasPericias: string[] = require("../../database/pericias.json");
 
-const criadorDePersonagem = (nome: string, poder: number, habilidade: number, resistencia: number) => {
-    const personagemAleatorio: PersonagemSimples = {
+export default (nome: string, poder: number, habilidade: number, resistencia: number) => {
+    const personagem: PersonagemSimples = {
         nome,
         poder,
         habilidade,
@@ -13,5 +13,5 @@ const criadorDePersonagem = (nome: string, poder: number, habilidade: number, re
         PV: 5*resistencia,
     }
 
-    return personagemAleatorio;
+    return personagem;
 }
