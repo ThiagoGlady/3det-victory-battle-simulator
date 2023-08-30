@@ -1,0 +1,28 @@
+{
+  "name": "3det-victory-battle-simulator",
+  "version": "1.0.0",
+  "description": "a battle simulator for the 3d&amp;t victory RPG system",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npx tsc && node dist/index.js",
+    "start:ts": "ts-node src/index.ts",
+    "dev": "ts-node-dev --transpile-only src/index.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ThiagoGlady/3det-victory-battle-simulator.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ThiagoGlady/3det-victory-battle-simulator/issues"
+  },
+  "homepage": "https://github.com/ThiagoGlady/3det-victory-battle-simulator#readme",
+  "devDependencies": {
+    "ts-node": "^10.9.1",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.2.2"
+  }
+}
