@@ -1,7 +1,13 @@
-export default (): number => {
-    const numeroDecimalAleatorio: number = Math.random();
+export default (dados: number): number => {
+    let soma = 0;
 
-    const numeroEntre1e6: number = Math.floor(numeroDecimalAleatorio*6) + 1;
+    for (let i = 0; i < dados; i++) {
+        const numeroDecimalAleatorio: number = Math.random();
 
-    return numeroEntre1e6;
+        const numeroEntre1e6: number = Math.floor(numeroDecimalAleatorio*6) + 1;
+
+        soma += numeroEntre1e6;
+    }
+
+    return soma;
 } 
