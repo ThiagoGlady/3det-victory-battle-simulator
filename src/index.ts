@@ -1,6 +1,7 @@
 import criadorDePersonagem from "./helpers/criadorDePersonagem";
 import PersonagemSimples from "./interfaces/PersonagemSimples";
 import rolarD6 from "./helpers/rolarD6";
+import brigar from "./helpers/brigar";
 
 function sleep(ms:number): any {
     return new Promise(resolve => setTimeout(resolve, ms));
@@ -35,5 +36,7 @@ if (rolagemOP1 >= rolagemOP2) {
 sleep(1000);
 
 while () {
+    console.log(`${oponenteInicial} ataca ${oponenteSecundario}!`);
+    brigar(oponenteInicial, oponenteSecundario);
     
 }
