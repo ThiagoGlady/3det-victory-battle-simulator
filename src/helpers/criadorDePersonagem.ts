@@ -1,4 +1,3 @@
-import Personagem from "../interfaces/Personagem"
 import PersonagemSimples from "../interfaces/PersonagemSimples";
 const todasPericias: string[] = require("../../database/pericias.json");
 

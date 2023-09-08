@@ -1,42 +1,67 @@
 import criadorDePersonagem from "./helpers/criadorDePersonagem";
 import PersonagemSimples from "./interfaces/PersonagemSimples";
-import rolarD6 from "./helpers/rolarD6";
 import brigar from "./helpers/brigar";
+import ResultadoCombate from "./interfaces/ResultadoCombate";
 
-function sleep(ms:number): any {
-    return new Promise(resolve => setTimeout(resolve, ms));
+const quantidadeDeLutas = 1000;
+
+let oponente1: PersonagemSimples = criadorDePersonagem("Glady", 3, 3, 3);
+let oponente2: PersonagemSimples = criadorDePersonagem("King", 3, 3, 3);
+
+interface TabelaDeVitoria {
+    [nome: string]: number;
 }
 
-const oponente1: PersonagemSimples = criadorDePersonagem("Filho", 3, 1, 2);
-const oponente2: PersonagemSimples = criadorDePersonagem("Saeva", 2, 1, 3);
+const tabelaDeVitoria: TabelaDeVitoria = {
+    [oponente1.nome]: 0,
+    [oponente2.nome]: 0,
+}
 
-console.log('Que comecem os jogos!\n');
-sleep(2000);
+let somaDeTurnos: number = 0;
+let quantidadeDeCombates:  number = 0;
 
-const rolagemOP1 = rolarD6(2)+oponente1.habilidade;
-console.log(`${oponente1.nome} tirou ${rolagemOP1} na Iniciativa`);
-sleep(2000);
+for (let i = 0; i < quantidadeDeLutas; i++) {
+    const resultadoCombate: ResultadoCombate = brigar(oponente1, oponente2);
+    const vencedor: PersonagemSimples = resultadoCombate.vitorioso;
+    somaDeTurnos += resultadoCombate.quantidadeDeTurnos;
+    quantidadeDeCombates += 1;
 
+    oponente1 = criadorDePersonagem("Glady", 3, 5, 3);
+    oponente2 = criadorDePersonagem("King", 3, 0, 3);
+
+    tabelaDeVitoria[vencedor.nome] += 1;
+}
+
+const mediaTurnos: number = somaDeTurnos/quantidadeDeCombates;
+
+console.log(tabelaDeVitoria, mediaTurnos);
+
+/* const rolagemOP1 = rolarD6(2)+oponente1.habilidade;
 const rolagemOP2 = rolarD6(2)+oponente2.habilidade;
-console.log(`${oponente2.nome} tirou ${rolagemOP2} na Iniciativa`);
-sleep(1000);
 
-let oponenteInicial: any = 0;
-let oponenteSecundario: any = 0; 
+let oponenteInicial: PersonagemSimples;
+let oponenteSecundario: PersonagemSimples;
 
 if (rolagemOP1 >= rolagemOP2) {
-    console.log(`${oponente1.nome} começa!`);
     oponenteInicial = oponente1;
     oponenteSecundario = oponente2;
 } else {
-    console.log(`${oponente2.nome} começa!`);
     oponenteInicial = oponente2;
     oponenteSecundario = oponente1;
 }
-sleep(1000);
 
-while () {
-    console.log(`${oponenteInicial} ataca ${oponenteSecundario}!`);
+let vencedor: string = '';
+
+for (let i = 0; i < 10; i++) {
     brigar(oponenteInicial, oponenteSecundario);
+    if (oponenteSecundario.PV <= 0) {
+        vencedor = oponenteInicial.nome;
+        break;
+    }
     
-}
+    brigar(oponenteSecundario, oponenteInicial);
+    if (oponenteInicial.PV <= 0) {
+        vencedor = oponenteSecundario.nome;
+        break;
+    }
+} */
