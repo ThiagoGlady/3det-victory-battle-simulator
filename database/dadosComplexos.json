@@ -1,0 +1,89 @@
+{
+    "pericias":[
+        {
+            "nome":"Animais",
+            "tag":{
+                "id":"ANIM"
+            },
+            "texto":""
+
+        },{
+            "nome":"Arte",
+            "tag":{
+                "id":"ARTE"
+            },
+            "texto":""
+
+        },{
+            "nome":"Esporte",
+            "tag":{
+                "id":"ESPO"
+            },
+            "texto":""
+
+        },{
+            "nome":"Influência",
+            "tag":{
+                "id":"INFL"
+            },
+            "texto":""
+
+        },{
+            "nome":"Luta",
+            "tag":{
+                "id":"LUTA"
+            },
+            "texto":""
+
+        },{
+            "nome":"Manha",
+            "tag":{
+                "id":"MANH"
+            },
+            "texto":""
+
+        },{
+            "nome":"Máquinas",
+            "tag":{
+                "id":"MAQU"
+            },
+            "texto":""
+
+        },{
+            "nome":"Medicina",
+            "tag":{
+                "id":"MEDC"
+            },
+            "texto":""
+
+        },{
+            "nome":"Mística",
+            "tag":{
+                "id":"MIST"
+            },
+            "texto":""
+
+        },{
+            "nome":"Percepção",
+            "tag":{
+                "id":"PERC"
+            },
+            "texto":""
+
+        },{
+            "nome":"Saber",
+            "tag":{
+                "id":"SABR"
+            },
+            "texto":""
+
+        },{
+            "nome":"Sustento",
+            "tag":{
+                "id":"SUST"
+            },
+            "texto":""
+
+        }
+    ]
+}

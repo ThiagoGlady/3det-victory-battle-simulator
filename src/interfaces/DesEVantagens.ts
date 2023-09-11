@@ -1,4 +1,10 @@
+import Tag from "./Tag";
+
 export default interface DesEVantagens {
     nome: string;
-    efeito: (...params: number[]) => void;
+    tags: Tag[];
+    texto: string;
+    tagTipo: Tag;
+    custoPontos: number
+    custoPM?: number;
 }
